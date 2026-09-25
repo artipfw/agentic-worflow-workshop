@@ -140,16 +140,29 @@ Suggest one focused next step when the evidence supports it.
 
 ## 7. Report
 
-<!-- TODO 3:
-Define a concise maintainer-facing report containing:
-- a 1–2 sentence summary
-- type and priority with brief evidence
-- a suggested-team label and simulated inline-code team tag
-- approval status set to "Pending maintainer review"
-- up to two similar issues when useful
-- one focused next step
+Post one concise comment:
 
-For an incomplete issue, replace speculative classification with focused
-clarifying questions while retaining the routing recommendation and approval
-status when supported. Keep the entire comment under 300 words.
--->
+```markdown
+## Triage report
+
+[One or two sentences summarizing the issue and recommended routing.]
+
+| Assessment | Result | Reasoning |
+|---|---|---|
+| Type | [type or unset] | [brief evidence] |
+| Priority | [priority or unset] | [brief evidence] |
+| Suggested team | [`suggested-team/*` or unset] | [brief evidence] |
+| Simulated tag | [`@example/team-name` or unset] | No real mention is created |
+| Approval | Pending maintainer review | Human confirms or changes the route |
+
+### Similar issues
+- #[number] — [duplicate or related, with a brief reason]
+
+### Next step
+[One focused action or the specific information still needed.]
+```
+
+Omit "Similar issues" when there are no useful matches. Include no more than
+two matches. For an incomplete issue, replace the table with concise clarifying
+questions, but retain the supported routing and approval status. Keep the report
+under 300 words, factual, respectful, and easy to scan.
