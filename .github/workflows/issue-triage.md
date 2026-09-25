@@ -38,12 +38,8 @@ safe-outputs:
       - bug
       - feature
       - question
-      # TODO 1: Add the labels needed for incomplete issues, duplicates,
-      # invalid submissions, spam, priorities p0 through p2, and the three
-      # suggested-team routing options.
       # Do not allow `routing/approved`; only a human reviewer may apply it.
-      - incomplete
-      - more-infor-required
+      - needs-info
       - duplicate
       - invalid
       - spam
@@ -51,10 +47,8 @@ safe-outputs:
       - priority/p1
       - priority/p2
       - suggested-team/workflows
-      - suggested-team/support
-      - suggested-team/investigetor
-      - suggested-team/reviewer
-      - suggested-team/executor
+      - suggested-team/developer-experience
+      - suggested-team/support-triage
     max: 4
   add-comment:
     max: 1
@@ -86,7 +80,7 @@ repository context. Do not invent missing details.
   require a clear requested change, motivation or use case, and a concrete expected outcome or acceptance criteria.
 
 # When essential information is missing:
-- Apply `incomplete` and `need-more-info`.
+- Apply `needs-info`.
 - Clearly state what information is missing.
 - Do not guess or invent missing details.
 - Do not apply a suggested-team routing label until enough information is available to determine the appropriate team.
@@ -101,14 +95,25 @@ Choose only labels that already exist and are directly supported by evidence.
 Apply at most one type label, one priority label, one status label such as
 `needs-info` or `duplicate`, and one suggested-team label.
 
-<!-- TODO 2B:
-Define priority/p0, priority/p1, and priority/p2 for this repository.
-Include a rule that prefers leaving priority unset over guessing.
-Define when to recommend each suggested-team label:
-- suggested-team/workflows
-- suggested-team/developer-experience
-- suggested-team/support-triage
--->
+- `priority/p0`: Active security incident, severe data loss, or broad outage.
+- `priority/p1`: Major regression or blocker with no reasonable workaround.
+- `priority/p2`: Normal actionable work without immediate operational impact.
+
+Labels can trigger other automation. Prefer leaving priority unset over
+applying one speculatively.
+
+Recommend routing using at most one label:
+
+- `suggested-team/workflows`: Agentic Workflows, GitHub Actions workflow
+  definitions, workflow compilation, schema validation, and automation logic.
+- `suggested-team/developer-experience`: GitHub CLI, authentication, Codespaces,
+  local developer tooling, and developer environment problems.
+- `suggested-team/support-triage`: incomplete intake, general usage questions,
+  or reports that cannot yet be routed to a product team.
+
+Prefer leaving the team unset over an unsupported product-team guess. An
+incomplete issue may route to support triage when focused clarification is the
+appropriate next action.
 
 ## 4. Find duplicates and related issues
 
