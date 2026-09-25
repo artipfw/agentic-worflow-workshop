@@ -42,6 +42,19 @@ safe-outputs:
       # invalid submissions, spam, priorities p0 through p2, and the three
       # suggested-team routing options.
       # Do not allow `routing/approved`; only a human reviewer may apply it.
+      - incomplete
+      - more-infor-required
+      - duplicate
+      - invalid
+      - spam
+      - priority/p0
+      - priority/p1
+      - priority/p2
+      - suggested-team/workflows
+      - suggested-team/support
+      - suggested-team/investigetor
+      - suggested-team/reviewer
+      - suggested-team/executor
     max: 4
   add-comment:
     max: 1
