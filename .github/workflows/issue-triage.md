@@ -79,10 +79,18 @@ repository context. Do not invent missing details.
 
 ## 2. Assess completeness
 
-<!-- TODO 2A:
-Define the evidence required for a bug and for a feature or task.
-Define what the workflow should do when essential information is missing.
--->
+# Evidence requirements:
+- Bug: 
+  require reproduction steps, expected behavior, actual behavior, and enough supporting evidence to investigate the problem (such as logs, screenshots, error messages, or environment details).
+- Feature or task:
+  require a clear requested change, motivation or use case, and a concrete expected outcome or acceptance criteria.
+
+# When essential information is missing:
+- Apply `incomplete` and `need-more-info`.
+- Clearly state what information is missing.
+- Do not guess or invent missing details.
+- Do not apply a suggested-team routing label until enough information is available to determine the appropriate team.
+- Never apply `routing/approved`; that label is reserved for a human reviewer.
 
 If the issue is clearly spam, gibberish, or a test submission, apply `spam` or
 `invalid` when available, explain the assessment briefly, and stop.
